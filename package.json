@@ -1,0 +1,13 @@
+{
+  "name": "insomnia-plugin-hmac-acquia-2-0",
+  "version": "1.0.0",
+  "insomnia": {
+    "name": "hmac-acquia-2-0",
+    "displayName": "HMAC authentication",
+    "description": "HMAC authentication as described by https://github.com/acquia/http-hmac-spec"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "main": "main.js"
+}
