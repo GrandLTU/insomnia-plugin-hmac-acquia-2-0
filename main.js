@@ -119,10 +119,10 @@ function computeSignature(request, settings) {
 function buildAuthHeader(request, settings) {
     return 'acquia-http-hmac ' + [
         ['realm', encodeURIComponent(settings.realm)],
-        ['id', settings.id],
-        ['nonce', settings.nonce],
+        ['id', encodeURIComponent(settings.id)],
+        ['nonce', encodeURIComponent(settings.nonce)],
         ['version', '2.0'],
-        ['headers', settings.headers.join('%3B')],
-        ['signature', computeSignature(request, settings)]
+        ['headers', encodeURIComponent(settings.headers.join(';'))],
+        ['signature', encodeURIComponent(computeSignature(request, settings))]
     ].map(pair => `${pair[0]}="${pair[1]}"`).join(',')
 }
